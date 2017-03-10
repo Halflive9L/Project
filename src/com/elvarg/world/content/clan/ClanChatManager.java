@@ -789,6 +789,7 @@ public class ClanChatManager {
 
 	public static void onLogin(Player player) {
 		resetInterface(player);
+		if(!player.getClanChatName().equals("Elvarg"))
 		ClanChatManager.join(player, player.getClanChatName());
 	}
 

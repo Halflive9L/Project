@@ -4,10 +4,13 @@ import com.elvarg.engine.task.Task;
 import com.elvarg.engine.task.TaskManager;
 import com.elvarg.util.Misc;
 import com.elvarg.world.World;
+import com.elvarg.world.content.skills.fletching.CreateArrowShaftTask;
 import com.elvarg.world.entity.impl.player.Player;
 import com.elvarg.world.model.Flag;
 import com.elvarg.world.model.Graphic;
 import com.elvarg.world.model.Skill;
+
+import java.util.Optional;
 
 /**
  * Represents a player's skills in the game, also manages calculations such as
@@ -166,6 +169,9 @@ public class SkillManager {
 		 * if(player.getCurrentTask() != null) { player.getCurrentTask().stop();
 		 * player.setCurrentTask(null); } player.setInputHandling(null);
 		 */
+		//TaskManager.cancelTasks(player);
+		player.getCurrentTask().stop();
+
 		return this;
 	}
 

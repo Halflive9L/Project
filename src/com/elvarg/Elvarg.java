@@ -58,7 +58,7 @@ public class Elvarg {
 	/**
 	 * The main logger.
 	 */
-	private static final Logger logger = Logger.getLogger("Elvarg");
+	private static final Logger logger = Logger.getLogger(GameConstants.SERVER_NAME);
 
 	public static void main(String[] params) {
 		Runtime.getRuntime().addShutdownHook(new ShutdownHook());
@@ -120,7 +120,7 @@ public class Elvarg {
 			executor.scheduleAtFixedRate(engine, 0, GameConstants.ENGINE_PROCESSING_CYCLE_RATE, TimeUnit.MILLISECONDS);
 
 			logger.info("The loader has finished loading utility tasks.");
-			logger.info("Elvarg is now online on port " + NetworkConstants.GAME_PORT + "!");
+			logger.info(GameConstants.SERVER_NAME + " is now online on port " + NetworkConstants.GAME_PORT + "!");
 		} catch (Exception ex) {
 			logger.log(java.util.logging.Level.SEVERE, "Could not start Elvarg! Program terminated.", ex);
 			System.exit(1);

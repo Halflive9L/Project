@@ -17,8 +17,6 @@ import java.util.Optional;
  */
 public class CreateFinishedBowTask extends Task {
 
-    private static final Animation CREATE_BOW_ANIMATION = new Animation(1248, Priority.LOW);
-
     public static final int BOWSTRING = 1777;
 
     private final Player player;
@@ -36,8 +34,10 @@ public class CreateFinishedBowTask extends Task {
 
     public void start(Player player) {
         if (bow.isPresent()) {
-            if (player.getSkillManager().getCurrentLevel(Skill.HERBLORE) >= bow.get().getRequirement()) {
-                TaskManager.submit(new CreateFinishedBowTask(player, bow, amount));
+            if (player.getSkillManager().getCurrentLevel(Skill.FLETCHING) >= bow.get().getRequirement()) {
+                player.setCurrentTask(new CreateFinishedBowTask(player,bow, amount));
+                TaskManager.submit(player.getCurrentTask());
+
             } else {
                 DialogueManager.sendStatement(player, "You need a Fletching level of atleast "
                         + bow.get().getRequirement() + " to make this bow.");
@@ -60,7 +60,7 @@ public class CreateFinishedBowTask extends Task {
     protected void execute() {
         if (bow.isPresent()) {
             if (player.getInventory()
-                    .contains(new Item[] { new Item(BOWSTRING), bow.get().getUnfinishedBow() })) {
+                    .contains(new Item[]{new Item(BOWSTRING), bow.get().getUnfinishedBow()})) {
                 player.performAnimation(new Animation(ItemDefinition.forId(bow.get().getAnimation()).getId(), Priority.LOW));
                 player.getPacketSender()
                         .sendMessage("You string the "

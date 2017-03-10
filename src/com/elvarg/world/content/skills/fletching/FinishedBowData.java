@@ -50,8 +50,6 @@ public enum FinishedBowData {
 
     private Item finished, unfinished;
 
-    private Item ingredient;
-
     private int requirement;
 
     private int experience;

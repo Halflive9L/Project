@@ -52,6 +52,8 @@ public class GameConstants {
 	 */
 	public static final boolean QUEUE_SWITCHING_REFRESH = true;
 
+	public static final String SERVER_NAME = "Project";
+
 	/**
 	 * The tab interfaces in game. {Gameframe} [0] = tab Id, [1] = tab interface
 	 * Id

@@ -3,8 +3,8 @@
   "password": "tja",
   "staff-rights": "ADMINISTRATOR",
   "position": {
-    "x": 3086,
-    "y": 3497,
+    "x": 3088,
+    "y": 3492,
     "z": 0
   },
   "spell-book": "NORMAL",
@@ -15,18 +15,18 @@
   "rigour": false,
   "augury": false,
   "has-veng": false,
-  "last-veng": -1074,
+  "last-veng": -1714,
   "running": true,
   "run-energy": 100,
   "spec-percentage": 100,
   "recoil-damage": 0,
   "poison-damage": 0,
-  "poison-immunity": -1074,
-  "overload-timer": -1074,
-  "fire-immunity": -1074,
-  "teleblock-timer": -1074,
-  "prayerblock-timer": -1074,
-  "skull-timer": -140563,
+  "poison-immunity": -1714,
+  "overload-timer": -1714,
+  "fire-immunity": -1714,
+  "teleblock-timer": -1714,
+  "prayerblock-timer": -1714,
+  "skull-timer": -141630,
   "target-kills": 0,
   "normal-kills": 0,
   "deaths": 0,
@@ -83,8 +83,8 @@
       "slot": 9
     },
     {
-      "id": -1,
-      "amount": 0,
+      "id": 843,
+      "amount": 1,
       "slot": 10
     },
     {
@@ -113,23 +113,23 @@
       "slot": 15
     },
     {
-      "id": -1,
-      "amount": 0,
+      "id": 54,
+      "amount": 1,
       "slot": 16
     },
     {
-      "id": -1,
-      "amount": 0,
+      "id": 54,
+      "amount": 1,
       "slot": 17
     },
     {
-      "id": -1,
-      "amount": 0,
+      "id": 54,
+      "amount": 1,
       "slot": 18
     },
     {
-      "id": -1,
-      "amount": 0,
+      "id": 54,
+      "amount": 1,
       "slot": 19
     },
     {
@@ -163,13 +163,13 @@
       "slot": 25
     },
     {
-      "id": -1,
-      "amount": 0,
+      "id": 1777,
+      "amount": 1,
       "slot": 26
     },
     {
-      "id": -1,
-      "amount": 0,
+      "id": 1777,
+      "amount": 1,
       "slot": 27
     }
   ],
@@ -321,7 +321,7 @@
       13034431,
       13034431,
       13034431,
-      13034771,
+      13034805,
       13034431,
       13034431,
       13034431,
@@ -494,12 +494,12 @@
     },
     {
       "id": 1777,
-      "amount": 480,
+      "amount": 472,
       "slot": 30
     },
     {
       "id": 54,
-      "amount": 480,
+      "amount": 470,
       "slot": 31
     }
   ],

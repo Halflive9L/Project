@@ -7,6 +7,7 @@ import java.util.List;
 import com.elvarg.GameConstants;
 import com.elvarg.cache.impl.definitions.ItemDefinition;
 import com.elvarg.cache.impl.definitions.WeaponInterfaces;
+import com.elvarg.engine.task.Task;
 import com.elvarg.engine.task.TaskManager;
 import com.elvarg.engine.task.impl.CombatPoisonEffect;
 import com.elvarg.engine.task.impl.OverloadPotionTask;
@@ -308,6 +309,7 @@ public class Player extends Character {
 		System.out.println(
 				"[World] Registering player - [username, host] : [" + getUsername() + ", " + getHostAddress() + "]");
 
+		getPacketSender().sendMessage("Welcome to " + GameConstants.SERVER_NAME + "!");
 		// Check if the player is already logged in.. If so, disconnect!!
 		Player copy_ = World.getPlayerByName(getUsername());
 		if (copy_ != null) {
@@ -472,6 +474,7 @@ public class Player extends Character {
 	 * Fields
 	 */
 
+	private Task CurrentTask;
 	private DialogueOptions dialogueOptions;
 	private String username;
 	private String password;
@@ -1087,5 +1090,13 @@ public class Player extends Character {
 
 	public Trading getTrading() {
 		return trading;
+	}
+
+	public Task getCurrentTask() {
+		return CurrentTask;
+	}
+
+	public void setCurrentTask(Task currentTask) {
+		CurrentTask = currentTask;
 	}
 }
