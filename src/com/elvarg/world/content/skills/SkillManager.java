@@ -6,9 +6,7 @@ import com.elvarg.util.Misc;
 import com.elvarg.world.World;
 import com.elvarg.world.content.skills.fletching.CreateArrowShaftTask;
 import com.elvarg.world.entity.impl.player.Player;
-import com.elvarg.world.model.Flag;
-import com.elvarg.world.model.Graphic;
-import com.elvarg.world.model.Skill;
+import com.elvarg.world.model.*;
 
 import java.util.Optional;
 
@@ -170,8 +168,11 @@ public class SkillManager {
 		 * player.setCurrentTask(null); } player.setInputHandling(null);
 		 */
 		//TaskManager.cancelTasks(player);
-		player.getCurrentTask().stop();
-
+		if(player.getCurrentTask() != null) {
+			player.getCurrentTask().stop();
+			player.setCurrentTask(null);
+			player.setAnimation(new Animation(-1, Priority.LOW));
+		}
 		return this;
 	}
 

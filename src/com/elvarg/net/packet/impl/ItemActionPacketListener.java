@@ -1,5 +1,7 @@
 package com.elvarg.net.packet.impl;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import com.elvarg.cache.impl.definitions.ItemDefinition;
@@ -82,6 +84,7 @@ public class ItemActionPacketListener implements PacketListener {
             if (data.isPresent()) {
                 CreateArrowShaftTask task = new CreateArrowShaftTask(player, data, 28);
                 task.start(player);
+                player.getPacketSender().sendChatboxInterface(304);
             }
             return;
         }

@@ -37,7 +37,8 @@ public class CreateArrowShaftTask extends Task {
     public void start(Player player) {
         if (shaft.isPresent()) {
             if (player.getSkillManager().getCurrentLevel(Skill.FLETCHING) >= shaft.get().getRequirement()) {
-                TaskManager.submit(new CreateArrowShaftTask(player, shaft, amount));
+                player.setCurrentTask(new CreateArrowShaftTask(player, shaft, amount));
+                TaskManager.submit(player.getCurrentTask());
             } else {
                 DialogueManager.sendStatement(player, "You need a Fletching level of atleast "
                         + shaft.get().getRequirement() + " to fletch this log.");

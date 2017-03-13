@@ -41,7 +41,8 @@ public class CreateUnfinishedPotionTask extends Task {
 	public void start(Player player) {
 		if (potion.isPresent()) {
 			if (player.getSkillManager().getCurrentLevel(Skill.HERBLORE) >= potion.get().getRequirement()) {
-				TaskManager.submit(new CreateUnfinishedPotionTask(player, potion, amount));
+				player.setCurrentTask(new CreateUnfinishedPotionTask(player, potion, amount));
+				TaskManager.submit(player.getCurrentTask());
 			} else {
 				DialogueManager.sendStatement(player, "You need a Herblore level of atleast "
 						+ potion.get().getRequirement() + " to make this potion.");
